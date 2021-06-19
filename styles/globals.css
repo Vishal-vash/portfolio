@@ -4,13 +4,33 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+  
+  body {
+    background: #0f0f0f;
+    color: #fff;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 * {
   box-sizing: border-box;
+}
+
+section {
+  min-height: 100vh;
+}
+
+.progress {
+  height: 2rem;
+  background-color: #000;
+  opacity: 0.6;
+}
+
+.lh-0 {
+  line-height: 0;
 }

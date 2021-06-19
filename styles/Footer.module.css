@@ -1,0 +1,18 @@
+.footer {
+    position: relative;
+}
+
+.up-arrow-link {
+    position: absolute;
+    top: -30px;
+    left: 48%;
+    background: #fff;
+    color: #000;
+    font-size: 25px;
+    padding: 10px 15px !important;
+  }
+  
+  .up-arrow-link:hover {
+      background-color: transparent;
+      color: #fff;
+  }

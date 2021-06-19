@@ -1,0 +1,14 @@
+.skills-section-wrapper {
+    background-color: #ccc;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.other-tools-wrapper {
+    background-color: #fff;
+    color: #333;
+}
+
+.card-heading {
+    font-weight: 500;
+}
