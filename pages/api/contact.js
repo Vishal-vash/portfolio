@@ -44,12 +44,10 @@ export default (req, res) => {
         </body>
       </html>`,
     };
-    let statusMessage = "";
-
+  
     transporter.sendMail(emailData, (err, info) => {
       if (err) {
-        res.status(500).send({ error: err.message });
-        statusMessage(err.messages);
+        res.status(500).send({ error: err.message || "Something Went Wrong"});
       } else {
         res.status(200).send({ sendStatus: "ok" });
       }
