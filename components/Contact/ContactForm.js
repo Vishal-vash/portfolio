@@ -16,10 +16,10 @@ const ContactForm = () => {
 
   const onInputChangeHandler = () => {
     setIsFormValid(false);
-    const nameIsValid = nameInputVal.current.value.trim().length === 0,
-      emailIsValid = emailInputVal.current.value.trim().length === 0,
-      subjectIsValid = subjectInputVal.current.value.trim().length === 0,
-      messageIsValid = messageInputVal.current.value.trim().length === 0;
+    const nameIsValid = nameInputVal.current.value.trim().length !== 0,
+      emailIsValid = emailInputVal.current.value.trim().length !== 0,
+      subjectIsValid = subjectInputVal.current.value.trim().length !== 0,
+      messageIsValid = messageInputVal.current.value.trim().length !== 0;
     if (nameIsValid && emailIsValid && subjectIsValid && messageIsValid) {
       setIsFormValid(true);
     }
@@ -145,7 +145,7 @@ const ContactForm = () => {
         <Row>
           <Col className="ml-2 mt-3">
             <Button
-              className="offset-sm-3 rounded-0"
+              className={`${classes.button} offset-sm-3 rounded-0`}
               variant="secondary"
               type="submit"
               disabled={!isFormValid}

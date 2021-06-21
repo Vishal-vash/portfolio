@@ -16,6 +16,6 @@
     outline: 1px solid #fff;
 }
 
-button.btn:disabled {
+.button:disabled {
     cursor: not-allowed;
 }
