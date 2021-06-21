@@ -41,7 +41,7 @@
   //   res.setHeader('Content-Type', 'image/jpg')
   //   res.send(imageBuffer)
   // }
-};
+//};
 
 
 //Server Side Code
