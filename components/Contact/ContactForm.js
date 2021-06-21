@@ -1,23 +1,40 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
 
+import AppToast from "../UI/Toast/AppToast";
 import classes from "../../styles/Contact.module.css";
 
 const ContactForm = () => {
-  const [nameInputVal, setNameInputVal] = useState("");
-  const [emailInputVal, setEmailInputVal] = useState("");
-  const [subjectInputVal, setSubjectInputVal] = useState("");
-  const [messageInputVal, setMessageInputVal] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [isError, setIsError] = useState({ error: false, errMessage: "" });
+  const nameInputVal = useRef("");
+  const emailInputVal = useRef("");
+  const subjectInputVal = useRef("");
+  const messageInputVal = useRef("");
+
+  const onInputChangeHandler = () => {
+    setIsFormValid(false);
+    const nameIsValid = nameInputVal.current.value.trim().length === 0,
+      emailIsValid = emailInputVal.current.value.trim().length === 0,
+      subjectIsValid = subjectInputVal.current.value.trim().length === 0,
+      messageIsValid = messageInputVal.current.value.trim().length === 0;
+    if (nameIsValid && emailIsValid && subjectIsValid && messageIsValid) {
+      setIsFormValid(true);
+    }
+  };
 
   const contactMeHandler = async (event) => {
     event.preventDefault();
+    setShowToast(true);
+    setIsSending(true);
     const contactData = {
-      nameInputVal,
-      emailInputVal,
-      subjectInputVal,
-      messageInputVal,
+      nameInputVal: nameInputVal.current.value,
+      emailInputVal: emailInputVal.current.value,
+      subjectInputVal: subjectInputVal.current.value,
+      messageInputVal: messageInputVal.current.value,
     };
-    console.log(contactData);
 
     const responseData = await fetch("/api/contact", {
       method: "POST",
@@ -29,85 +46,117 @@ const ContactForm = () => {
     });
 
     const response = await responseData.json();
-    if(response.status === 200) {
-        console.log(response);
-        setNameInputVal('');
-        setEmailInputVal('');
-        setSubjectInputVal('');
-        setMessageInputVal('')
+    if (response) {
+      if (response.error) {
+        setIsError({ error: true, errMessage: response.error });
+      } else {
+        nameInputVal.current.value = "";
+        emailInputVal.current.value = "";
+        subjectInputVal.current.value = "";
+        messageInputVal.current.value = "";
+      }
+      setIsFormValid(false);
     }
+    setIsSending(false);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000);
   };
 
+  let toastClass = "bg-warning";
+  let message = "Sending Email...";
+  if (!isSending) {
+    if (isError.error) {
+      message = isError.errMessage;
+      toastClass = "bg-danger";
+    } else {
+      message = "Mail sent successfully";
+      toastClass = "bg-primary";
+    }
+  }
+
   return (
-    <Form onSubmit={contactMeHandler}>
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-        <Form.Label column sm="3">
-          Name<span className="text-primary">*</span>
-        </Form.Label>
-        <Col sm="8">
-          <Form.Control
-            className={classes.input}
-            type="text"
-            size="lg rounded-0"
-            onChange={(e) => setNameInputVal(e.target.value)}
-          />
-        </Col>
-      </Form.Group>
+    <>
+      <Form onSubmit={contactMeHandler}>
+        <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+          <Form.Label column sm="3">
+            Name<span className="text-primary">*</span>
+          </Form.Label>
+          <Col sm="8">
+            <Form.Control
+              className={classes.input}
+              type="text"
+              size="lg rounded-0"
+              ref={nameInputVal}
+              onChange={onInputChangeHandler}
+              required
+            />
+          </Col>
+        </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-        <Form.Label column sm="3">
-          Email<span className="text-primary">*</span>
-        </Form.Label>
-        <Col sm="8">
-          <Form.Control
-            className={classes.input}
-            type="email"
-            size="lg rounded-0"
-            onChange={(e) => setEmailInputVal(e.target.value)}
-          />
-        </Col>
-      </Form.Group>
+        <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+          <Form.Label column sm="3">
+            Email<span className="text-primary">*</span>
+          </Form.Label>
+          <Col sm="8">
+            <Form.Control
+              className={classes.input}
+              type="email"
+              size="lg rounded-0"
+              ref={emailInputVal}
+              onChange={onInputChangeHandler}
+              required
+            />
+          </Col>
+        </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-        <Form.Label column sm="3">
-          Subject
-        </Form.Label>
-        <Col sm="8">
-          <Form.Control
-            className={classes.input}
-            type="text"
-            size="lg rounded-0"
-            onChange={(e) => setSubjectInputVal(e.target.value)}
-          />
-        </Col>
-      </Form.Group>
+        <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+          <Form.Label column sm="3">
+            Subject
+          </Form.Label>
+          <Col sm="8">
+            <Form.Control
+              className={classes.input}
+              type="text"
+              size="lg rounded-0"
+              ref={subjectInputVal}
+              onChange={onInputChangeHandler}
+              required
+            />
+          </Col>
+        </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-        <Form.Label column sm="3">
-          Message<span className="text-primary">*</span>
-        </Form.Label>
-        <Col sm="8">
-          <Form.Control
-            className={classes.input}
-            as="textarea"
-            size="lg rounded-0"
-            style={{ height: "250px", minheight: "100px" }}
-            onChange={(e) => setMessageInputVal(e.target.value)}
-          />
-        </Col>
-      </Form.Group>
-      <Row>
-        <Col className="ml-2 mt-3">
-          <Button
-            className="offset-sm-3 rounded-0"
-            variant="secondary"
-            type="submit"
-          >
-            Submit
-          </Button>
-        </Col>
-      </Row>
-    </Form>
+        <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+          <Form.Label column sm="3">
+            Message<span className="text-primary">*</span>
+          </Form.Label>
+          <Col sm="8">
+            <Form.Control
+              className={classes.input}
+              as="textarea"
+              size="lg rounded-0"
+              style={{ height: "250px", minheight: "100px" }}
+              ref={messageInputVal}
+              onChange={onInputChangeHandler}
+              required
+            />
+          </Col>
+        </Form.Group>
+        <Row>
+          <Col className="ml-2 mt-3">
+            <Button
+              className="offset-sm-3 rounded-0"
+              variant="secondary"
+              type="submit"
+              disabled={!isFormValid}
+            >
+              Submit
+            </Button>
+          </Col>
+        </Row>
+      </Form>
+      <AppToast show={showToast} message={message} toastClass={toastClass} />
+    </>
   );
 };
 

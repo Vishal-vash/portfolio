@@ -13,6 +13,7 @@ export default function Home() {
       </Head>
 
       <Layout />
+      <div id="toast-root"></div>
     </div>
   )
 }

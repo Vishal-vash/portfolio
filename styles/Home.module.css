@@ -1,7 +1,7 @@
 .down-arrow-link {
   position: absolute;
   bottom: 40px;
-  left: 48%;
+  left: 41%;
   background: #fff;
   color: #000;
   font-size: 25px;
@@ -11,4 +11,10 @@
 .down-arrow-link:hover {
     background-color: transparent;
     color: #fff;
+}
+
+@media (min-width: 768px) {
+  .down-arrow-link { 
+    left: 48%;
+  }
 }

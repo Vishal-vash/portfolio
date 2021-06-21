@@ -18,32 +18,41 @@ export default (req, res) => {
   const { emailInputVal, messageInputVal, nameInputVal, subjectInputVal } =
     req.body;
 
-  const emailData = {
-    from: userEmail,
-    to: "vishal.vasishat@gmail.com",
-    subject: `Message from ${nameInputVal}`,
-    text: `${messageInputVal}`,
-    html: `<!doctype html>
-    <html ⚡4email>
-      <head>
-        <title>Vishal Portfolio</title>
-      </head>
-      <body>
-        <p>This message is from ${nameInputVal}</p>
-        <p>Sender Email is ${emailInputVal}</p>
-        <p>This is regarding ${subjectInputVal}</p>
-        <p>Sender Message : ${messageInputVal}</p>
-      </body>
-    </html>`,
-  };
+  if (
+    emailInputVal.trim().length === 0 &&
+    messageInputVal.trim().length === 0 &&
+    nameInputVal.trim().length === 0 &&
+    subjectInputVal.trim().length === 0
+  ) {
+    res.status(500).send({ error: "Input not provided." });
+  } else {
+    const emailData = {
+      from: userEmail,
+      to: "vishal.vasishat@gmail.com",
+      subject: `Message from ${nameInputVal}`,
+      text: `${messageInputVal}`,
+      html: `<!doctype html>
+      <html ⚡4email>
+        <head>
+          <title>Vishal Portfolio</title>
+        </head>
+        <body>
+          <p>This message is from ${nameInputVal}</p>
+          <p>Sender Email is ${emailInputVal}</p>
+          <p>This is regarding ${subjectInputVal}</p>
+          <p>Sender Message : ${messageInputVal}</p>
+        </body>
+      </html>`,
+    };
 
-  transporter.sendMail(emailData, (err, info) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(info);
-    }
-  });
+    transporter.sendMail(emailData, (err, info) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(info);
+      }
+    });
 
-  res.status(200);
+    res.status(200).send({ sendStatus: "ok" });
+  }
 };

@@ -14,7 +14,7 @@
 }
 
 @media (max-width: 500px) {
-    .__offCanvas {
+    .__OffCanvas {
         display: none;
     }
 }

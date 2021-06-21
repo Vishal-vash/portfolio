@@ -4,11 +4,11 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  }
-  
-  body {
-    background: #0f0f0f;
-    color: #fff;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
 }
 
 a {
@@ -23,6 +23,7 @@ a {
 
 section {
   min-height: 100vh;
+  padding: 2rem 1rem;
 }
 
 .progress {
@@ -33,4 +34,38 @@ section {
 
 .lh-0 {
   line-height: 0;
+}
+
+.navbar {
+  -webkit-transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  -moz-transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  -o-transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@media (max-width: 1023px) {
+  .mt-xs-1 {
+    margin-top: 1rem !important;
+  }
+  .mt-xs-2 {
+    margin-top: 2rem !important;
+  }
+  .mb-xs-1 {
+    margin-bottom: 1rem !important;
+  }
+  .mb-xs-2 {
+    margin-bottom: 2rem !important;
+  }
+  .p-xs-0 {
+    padding: 0 !important;
+  }
+}
+.navLink,
+.navbar-dark .navbar-nav .nav-link.navLink {
+  font-weight: 500;
+  color: #fff;
+}
+.navbar-dark .navbar-nav .nav-link.navLink.active,
+.navLink.active {
+  color: #ff5207;
 }

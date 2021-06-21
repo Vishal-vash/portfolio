@@ -7,9 +7,10 @@ import Skills from "../Skills";
 import Contact from "../Contact/Contact";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const Layout = ({ children }) => {
+const Layout = () => {
   const [navLinks, setNavLinks] = useState([]);
   const homeRef = useRef();
+  const homeTextRef = useRef();
   const aboutRef = useRef();
   const resumeRef = useRef();
   const skillsRef = useRef();
@@ -22,6 +23,7 @@ const Layout = ({ children }) => {
         name: "home",
         offsetMin: homeRef.current.offsetTop,
         offsetMax: aboutRef.current.offsetTop - 100,
+        offsetHomeTextMin: homeTextRef.current.offsetTop - 100
       },
       {
         name: "about",
@@ -44,7 +46,7 @@ const Layout = ({ children }) => {
         offsetMax: footerRef.current.offsetTop -100,
       },
     ];
-  }, [homeRef, aboutRef, resumeRef, skillsRef, contactRef]);
+  }, [homeRef, homeTextRef, aboutRef, resumeRef, skillsRef, contactRef]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -61,7 +63,7 @@ const Layout = ({ children }) => {
     <div className="main" onScroll={handleScroll}>
       <Header navLinks={navLinks} />
       <main>
-        <Home forwardedRef={homeRef} />
+        <Home forwardedRef={homeRef} forwardedHomeTextRef={homeTextRef} />
         <About forwardedRef={aboutRef} />
         <Resume forwardedRef={resumeRef} />
         <Skills forwardedRef={skillsRef} />

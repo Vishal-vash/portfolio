@@ -1,6 +1,5 @@
 .skills-section-wrapper {
     background-color: #ccc;
-    margin-bottom: 1rem;
     color: #333;
 }
 
@@ -11,4 +10,11 @@
 
 .card-heading {
     font-weight: 500;
+}
+
+@media (max-width: 767px) {
+    .skills-section-wrapper,
+    .other-tools-wrapper {
+        padding: 2rem 1rem;
+    }
 }

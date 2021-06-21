@@ -50,15 +50,15 @@ const Skills = ({ forwardedRef }) => {
     },
   ];
   return (
-    <section ref={forwardedRef} id="skills_section">
+    <section ref={forwardedRef} id="skills_section" className="p-0">
       <div className={`${classes["skills-section-wrapper"]} p-sm-5 p-xs-2`}>
         <Row className="pl-sm-5 pr-sm-5 m-0">
-          <Col sm={3}>
-            <h4>
+          <Col lg={3}>
+            <h4 className="mb-xs-2">
               <span className="border-bottom border-primary">Skills</span>
             </h4>
           </Col>
-          <Col sm={9}>
+          <Col lg={9}>
             {skills.map((skill) => (
               <AppProgressBar
                 key={skill.id}
@@ -71,10 +71,10 @@ const Skills = ({ forwardedRef }) => {
         </Row>
       </div>
       <div className={`${classes["other-tools-wrapper"]} p-sm-5 p-xs-2`}>
-        <Row>
+        <Row className="m-0">
           {other_tools.map((tool) => (
-            <Col sm={4} key={tool.id}>
-              <Card>
+            <Col lg={4} key={tool.id}>
+              <Card className="mb-3">
                 <Card.Header className={classes["card-heading"]}>
                   {tool.label}
                 </Card.Header>
