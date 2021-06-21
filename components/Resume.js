@@ -9,12 +9,12 @@ const Resume = ({ forwardedRef }) => {
       className={`${classes["resume-section-wrapper"]} p-sm-5 p-xs-2`}
     >
       <Row className="pl-sm-5 pr-sm-5 m-0 mb-5 pb-5 border-bottom">
-        <Col sm={3}>
-          <h4>
+        <Col lg={3}>
+          <h4 className="mb-xs-2">
             <span className="border-bottom border-primary">Education</span>
           </h4>
         </Col>
-        <Col sm={9}>
+        <Col lg={9}>
           <h4>Chitkara University</h4>
           <p className="text-muted">
             <em>Masters of Computer Applications</em> • July 2011
@@ -40,14 +40,14 @@ const Resume = ({ forwardedRef }) => {
         </Col>
       </Row>
       <Row className="pl-sm-5 pr-sm-5 m-0 mb-5 ">
-        <Col sm={3}>
-          <h4>
+        <Col lg={3}>
+          <h4 className="mb-xs-2">
             <span className="border-bottom border-primary">
               Work Experience
             </span>
           </h4>
         </Col>
-        <Col sm={9}>
+        <Col lg={9}>
           <h4>Conduent, Inc</h4>
           <p className="text-muted">
             <em>Lead UI Developer</em> • June 2017 - Present

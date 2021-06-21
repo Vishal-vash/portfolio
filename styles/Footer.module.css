@@ -5,7 +5,7 @@
 .up-arrow-link {
     position: absolute;
     top: -30px;
-    left: 48%;
+    left: 41%;
     background: #fff;
     color: #000;
     font-size: 25px;
@@ -15,4 +15,10 @@
   .up-arrow-link:hover {
       background-color: transparent;
       color: #fff;
+  }
+
+  @media (min-width: 767px) {
+      .up-arrow-link {
+          left: 48%;
+      }
   }

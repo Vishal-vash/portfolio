@@ -12,7 +12,7 @@ const About = ({ forwardedRef }) => {
       className={`${classes["about-section-wrapper"]} p-sm-5 p-xs-2`}
     >
       <Row className="pl-sm-5 pr-sm-5 m-0">
-        <Col sm={3}>
+        <Col lg={3}>
           <Figure>
             <Figure.Image
               width={180}
@@ -23,42 +23,41 @@ const About = ({ forwardedRef }) => {
             />
           </Figure>
         </Col>
-        <Col sm={9}>
+        <Col lg={9}>
           <h4>About Me</h4>
           <Row className="mb-3">
             <Col>
               <p>
-                Use this bio section as your way of describing yourself and
-                saying what you do, what technologies you like to use or feel
-                most comfortable with, describing your personality, or whatever
-                else you feel like throwing in.
+                I am a very passionate front end developer. I prefer to keep learning new technologies, continue challenging myself while doing things that matter. Being a fast learner I am able to pick up new skills to have expertise on different areas. I prefer to do my work with honesty and commitment.
               </p>
+              <p>Apart from these I love to travel and explore different cultures. I prefer to spend time outdoors. I love to play table tennis and cricket.</p>
             </Col>
           </Row>
           <h4>Contact Details</h4>
           <Row>
-            <Col sm={6}>
+            <Col lg={6}>
               <ContactAddress />
             </Col>
-            <Col sm={6}>
+            <Col lg={6}>
               <div className="mb-4">
                 <a
-                  className="btn btn-secondary rounded-0 btn-lg"
+                  className="btn btn-secondary rounded-0 btn-lg col-sm-8 mt-xs-2"
                   href="assets/docs/Vishal_Vasishat_Resume.pdf"
                   download
                 >
                   <i className="bi bi-download mr-2"></i>Download Resume
                 </a>
               </div>
-
-              <OffCanvas>
-                <embed
-                  src="assets/docs/Vishal_Vasishat_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0"
-                  type="application/pdf"
-                  width="100%"
-                  height="600"
-                />
-              </OffCanvas>
+              <div className="d-none d-lg-block">
+                <OffCanvas>
+                  <embed
+                    src="assets/docs/Vishal_Vasishat_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                    type="application/pdf"
+                    width="100%"
+                    height="600"
+                  />
+                </OffCanvas>
+              </div>
             </Col>
           </Row>
         </Col>
