@@ -1,18 +1,18 @@
-export default (req, res) => {
-  var filePath = "assets/docs/Vishal_Vasishat_Resume.pdf";
-  var stat = fileSystem.statSync(filePath);
+// export default async (req, res) => {
+//   var filePath = "assets/docs/Vishal_Vasishat_Resume.pdf";
+//   var stat = fileSystem.statSync(filePath);
 
-  res.writeHead(200, {
-    "Content-Type": "pdf",
-    "Content-Length": stat.size,
-  });
+//   res.writeHead(200, {
+//     "Content-Type": "pdf",
+//     "Content-Length": stat.size,
+//   });
 
-  var readStream = fileSystem.createReadStream(filePath);
-  // We replaced all the event handlers with a simple call to readStream.pipe()
-  await new Promise(function (resolve) {
-    readStream.pipe(res);
-    readStream.on("end", resolve);
-  });
+//   var readStream = fileSystem.createReadStream(filePath);
+//   // We replaced all the event handlers with a simple call to readStream.pipe()
+//   await new Promise(function (resolve) {
+//     readStream.pipe(res);
+//     readStream.on("end", resolve);
+//   });
 
   //Second exmaple using buffer
   /*
@@ -41,7 +41,7 @@ export default (req, res) => {
   //   res.setHeader('Content-Type', 'image/jpg')
   //   res.send(imageBuffer)
   // }
-};
+//};
 
 
 //Server Side Code
