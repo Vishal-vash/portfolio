@@ -36,7 +36,7 @@ const Skills = ({ forwardedRef }) => {
       label: "IDE/Code Editor",
       list: [
         { name: "VS Code", iconname: "vscode.png" },
-        { name: "WebStorm", iconname: "webStorm.png" },
+        { name: "WebStorm", iconname: "webstorm.png" },
         { name: "Atom", iconname: "atom.png" },
       ],
     },
@@ -44,7 +44,7 @@ const Skills = ({ forwardedRef }) => {
       id: "9",
       label: "Bug Tracking Tools",
       list: [
-        { name: "TFS", iconname: "tfs.png" },
+        { name: "TFS", iconname: "TFS.png" },
         { name: "JIRA", iconname: "jira.png" },
       ],
     },
