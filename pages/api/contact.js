@@ -45,11 +45,11 @@ export default (req, res) => {
       </html>`,
     };
   
-    transporter.sendMail(emailData, (err, info) => {
+    transporter.sendMail(emailData, async (err, info) => {
       if (err) {
-        res.status(500).send({ error: err.message || "Something Went Wrong"});
+        await res.status(500).send({ error: err.message || "Something Went Wrong"});
       } else {
-        res.status(200).send({ sendStatus: "ok" });
+        await res.status(200).send({ sendStatus: "ok" });
       }
     });
   }
