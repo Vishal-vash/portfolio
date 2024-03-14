@@ -48,15 +48,15 @@ const Resume = ({ forwardedRef }) => {
           </h4>
         </Col>
         <Col lg={9}>
-          <h4>Conduent, Inc</h4>
+          <h4>Ernst & Young</h4>
           <p className="text-muted">
-            <em>Lead UI Developer</em> • June 2017 - Present
+            <em>Associate Manager</em> • September 2021 - Present
           </p>
           <p>
             Working with core implementation team to create the next generation
             versions of currently available products using more advanced
             technologies like React and Redux that enhances the product
-            performance and efficiency. Creating the front end using AngularJS
+            performance and efficiency. Created the front end using AngularJS
             and React frameworks that integrates directly with Rest Api to fetch
             and post data over web applications.
           </p>
@@ -64,6 +64,18 @@ const Resume = ({ forwardedRef }) => {
             Leading a small team of developers that works directly with Business
             analyst team to gather client requirements/designs and develop the
             same after deep analysis with POCs.
+          </p>
+          <h4>Conduent, Inc</h4>
+          <p className="text-muted">
+            <em>Lead UI Developer</em> • June 2017 - September 2021
+          </p>
+          <p>
+            Worked with core implementation team to create the next generation
+            versions of currently available products using more advanced
+            technologies like React and Redux that enhances the product
+            performance and efficiency. Created the front end using AngularJS
+            and React frameworks that integrates directly with Rest Api to fetch
+            and post data over the web applications.
           </p>
           <h4>Landis + Gyr LTD.</h4>
           <p className="text-muted">
@@ -93,7 +105,7 @@ const Resume = ({ forwardedRef }) => {
           </p>
           <h4>Cognizant Technology Solutions and ACS A Xerox Company</h4>
           <p className="text-muted">
-            <em>Software Developer</em> • Oct 2011 - Aug 2014 2017
+            <em>Software Developer</em> • Oct 2011 - Aug 2014
           </p>
           <p>
             Started my career as a part of UI development team to work on
