@@ -53,29 +53,29 @@ const Resume = ({ forwardedRef }) => {
             <em>Associate Manager</em> • September 2021 - Present
           </p>
           <p>
-            Working with core implementation team to create the next generation
-            versions of currently available products using more advanced
-            technologies like React and Redux that enhances the product
-            performance and efficiency. Created the front end using AngularJS
-            and React frameworks that integrates directly with Rest Api to fetch
-            and post data over web applications.
+            Collaborating with a team of UI developers to craft products
+            tailored to diverse audit tasks across different companies,
+            utilizing cutting-edge front-end technologies. Additionally,
+            seamlessly integrating GEN AI into select projects to infuse
+            intelligence and enhance the sophistication of our offerings.ˀ
           </p>
           <p>
-            Leading a small team of developers that works directly with Business
-            analyst team to gather client requirements/designs and develop the
-            same after deep analysis with POCs.
+            Guiding a compact team of developers in direct collaboration with
+            the client teams, adeptly collecting client requirements and
+            designs. Subsequently, conducting thorough analysis, including proof
+            of concepts (POCs), to develop solutions aligned with client needs.
           </p>
           <h4>Conduent, Inc</h4>
           <p className="text-muted">
             <em>Lead UI Developer</em> • June 2017 - September 2021
           </p>
           <p>
-            Worked with core implementation team to create the next generation
-            versions of currently available products using more advanced
-            technologies like React and Redux that enhances the product
-            performance and efficiency. Created the front end using AngularJS
-            and React frameworks that integrates directly with Rest Api to fetch
-            and post data over the web applications.
+            Collaborated with the core implementation team to pioneer the next
+            generation of existing products, leveraging advanced technologies
+            such as React and Redux to elevate performance and efficiency.
+            Engineered the frontend using AngularJS and React frameworks,
+            seamlessly integrating with REST APIs for streamlined data retrieval
+            and posting across web applications.
           </p>
           <h4>Landis + Gyr LTD.</h4>
           <p className="text-muted">
@@ -83,37 +83,29 @@ const Resume = ({ forwardedRef }) => {
             2017
           </p>
           <p>
-            Worked here as an individual contributor in my team for UI related
-            work on smart meter application solutions. Architect two mini
-            portals with thirdparty integration to smart meter application web
-            portal.
-          </p>
-          <p>
-            Worked directly with client teams to understand the requirements and
-            delivered the same before time with quality code.
+            During my tenure, I served as a sole contributor within my team,
+            focusing on UI tasks for smart meter application solutions. I
+            spearheaded the architecture of two mini portals, seamlessly
+            integrating third-party elements into the smart meter application
+            web portal.
           </p>
           <h4>hCentive, Inc.</h4>
           <p className="text-muted">
             <em>UI Developer</em> • Aug 2014 - Nov 2016
           </p>
           <p>
-            As a team member of core UI team worked on US healthcare portals to
-            provide service to our customers with good customer experience.
-            Learnt and Worked on web accessibility for US government portals
-            with 508 compliance. Created next level user interactive web
-            applications for demo to bid new customers in the market.
+            As a member of the core UI team, collaborated on US healthcare
+            portals to ensure exceptional customer experiences, while mastering
+            web accessibility and 508 compliance for US government portals
           </p>
           <h4>Cognizant Technology Solutions and ACS A Xerox Company</h4>
           <p className="text-muted">
             <em>Software Developer</em> • Oct 2011 - Aug 2014
           </p>
           <p>
-            Started my career as a part of UI development team to work on
-            providing web solutions to US Healthcare/Savings and Retirement
-            domains. Worked to create web pages from PSDs and make them
-            responsive as per page layout. Individually handled Verizon client
-            to create web pages from scratch for all domains with successful
-            Annual Enrollment period.
+            Initiated my professional journey as a member of the UI development
+            team, dedicated to delivering web solutions within the US
+            Healthcare/Savings and Retirement sectors.
           </p>
         </Col>
       </Row>
