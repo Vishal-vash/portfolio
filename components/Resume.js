@@ -57,7 +57,7 @@ const Resume = ({ forwardedRef }) => {
             tailored to diverse audit tasks across different companies,
             utilizing cutting-edge front-end technologies. Additionally,
             seamlessly integrating GEN AI into select projects to infuse
-            intelligence and enhance the sophistication of our offerings.ˀ
+            intelligence and enhance the sophistication of our offerings.
           </p>
           <p>
             Guiding a compact team of developers in direct collaboration with
